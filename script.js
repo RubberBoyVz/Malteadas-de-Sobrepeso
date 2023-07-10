@@ -1,38 +1,52 @@
 const catalogue = document.getElementById("milkshake-catalogue");
 
-const milkshake1 = {
-    id: 1,
-    img: "url('img/1.jpg')",
-    place: "El Moro 'Parque Tepeyac'",
-    flavor: "Vainilla",
-    price: "$75",
-};
+class Milkshake {
+    constructor(id, img, place, flavor, price) {
+        this.id = id;
+        this.img = img;
+        this.place = place;
+        this.flavor = flavor;
+        this.price = price;
+    }
+}
 
-const milkshakeCard = document.createElement("div");
-const milkshakePhoto = document.createElement("div");
-const milkshakeInfo = document.createElement("div");
-const milkshakePlace = document.createElement("div");
-const milkshakeFlavor = document.createElement("div");
-const milkshakePrice = document.createElement("div");
+const milkshake1 = new Milkshake(1, "url('img/1.jpg')", "El Moro 'Parque Tepeyac'", "Vainilla", "$75");
+const milkshake2 = new Milkshake(2, "url('img/2.jpg')", "Vips 'Plaza Tepeyac'", "Vainilla", "$70");
+const milkshake3 = new Milkshake(3, "url('img/3.webp')", "Café Andares", "Vainilla", "$55");
 
-milkshakeCard.className = "milkshake-card";
-milkshakeCard.id = milkshake1.id;
+let milkshakeArray = [milkshake1, milkshake2, milkshake3];
 
-milkshakePhoto.className = "milkshake-photo";
-milkshakePlace.className = "milkshake-place";
-milkshakeFlavor.className = "milkshake-flavor";
-milkshakePrice.className = "milkshake-price";
-milkshakeInfo.className = "milkshake-info";
+for (let i = 0; i < milkshakeArray.length; i++) {
+    createMilkshakeCards(i);
+}
 
-milkshakePhoto.style.backgroundImage = milkshake1.img;
-milkshakePlace.innerText = milkshake1.place;
-milkshakeFlavor.innerText = milkshake1.flavor;
-milkshakePrice.innerText = milkshake1.price;
+function createMilkshakeCards(i) {
+    const milkshakeCard = document.createElement("div");
+    const milkshakePhoto = document.createElement("div");
+    const milkshakeInfo = document.createElement("div");
+    const milkshakePlace = document.createElement("div");
+    const milkshakeFlavor = document.createElement("div");
+    const milkshakePrice = document.createElement("div");
 
-milkshakeCard.appendChild(milkshakePhoto);
-milkshakeCard.appendChild(milkshakeInfo);
+    milkshakeCard.className = "milkshake-card";
+    milkshakeCard.id = milkshakeArray[i].id;
 
-milkshakeInfo.appendChild(milkshakePlace);
-milkshakeInfo.appendChild(milkshakeFlavor);
-milkshakeInfo.appendChild(milkshakePrice);
-catalogue.appendChild(milkshakeCard);
+    milkshakePhoto.className = "milkshake-photo";
+    milkshakePlace.className = "milkshake-place";
+    milkshakeFlavor.className = "milkshake-flavor";
+    milkshakePrice.className = "milkshake-price";
+    milkshakeInfo.className = "milkshake-info";
+
+    milkshakePhoto.style.backgroundImage = milkshakeArray[i].img;
+    milkshakePlace.innerText = milkshakeArray[i].place;
+    milkshakeFlavor.innerText = milkshakeArray[i].flavor;
+    milkshakePrice.innerText = milkshakeArray[i].price;
+
+    milkshakeCard.appendChild(milkshakePhoto);
+    milkshakeCard.appendChild(milkshakeInfo);
+
+    milkshakeInfo.appendChild(milkshakePlace);
+    milkshakeInfo.appendChild(milkshakeFlavor);
+    milkshakeInfo.appendChild(milkshakePrice);
+    catalogue.appendChild(milkshakeCard);
+}
