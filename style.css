@@ -57,7 +57,7 @@ body {
     text-decoration-thickness: 0.3rem;
 }
 
-.milkshake-catalogue {
+#milkshake-catalogue {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,10 +68,11 @@ body {
 
 .milkshake-card {
     background-color: var(--blanco);
-    padding: 1rem;
+    padding: 2rem;
     border-radius: 1.5rem;
     display: flex;
     flex-direction: column;
+    gap: 2rem;
 }
 
 .milkshake-photo {
@@ -79,7 +80,14 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url("img/1.jpg");
     width: 20rem;
     height: 20rem;
+}
+
+.milkshake-info {
+    text-align: center;
+}
+
+.milkshake-place {
+    text-align: center;
 }
