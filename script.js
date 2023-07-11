@@ -10,11 +10,12 @@ class Milkshake {
     }
 }
 
-const milkshake1 = new Milkshake(1, "url('img/1.jpg')", "El Moro 'Parque Tepeyac'", "Vainilla", "$75");
+const milkshake1 = new Milkshake(1, "url('img/1.jpg')", "El Moro 'Parque Tepeyac'", "Chocolate", "$75");
 const milkshake2 = new Milkshake(2, "url('img/2.jpg')", "Vips 'Plaza Tepeyac'", "Vainilla", "$70");
 const milkshake3 = new Milkshake(3, "url('img/3.webp')", "Café Andares", "Vainilla", "$55");
+const milkshake4 = new Milkshake(4, "url('img/4.jpg')", "Nevería Roxy 'La Condesa'", "Vainilla", "$60");
 
-let milkshakeArray = [milkshake1, milkshake2, milkshake3];
+let milkshakeArray = [milkshake1, milkshake2, milkshake3, milkshake4];
 
 for (let i = 0; i < milkshakeArray.length; i++) {
     createMilkshakeCards(i);
